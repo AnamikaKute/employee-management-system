@@ -1,0 +1,41 @@
+{
+  "employees": [
+    {
+      "id": "0c6d",
+      "fullName": "",
+      "employeeId": "",
+      "jobRole": "",
+      "projectName": "",
+      "salary": "",
+      "email": ""
+    },
+    {
+      "id": "1070",
+      "fullName": "siddhesh",
+      "employeeId": "ggg",
+      "jobRole": "dfg",
+      "projectName": "dfgh",
+      "salary": "",
+      "email": "gfg"
+    },
+    {
+      "id": "6737",
+      "fullName": "ssdf",
+      "employeeId": "ert",
+      "jobRole": "dfg",
+      "projectName": "zx",
+      "salary": "566",
+      "email": "gg"
+    },
+    {
+      "id": "a993",
+      "fullName": "shreeyan",
+      "employeeId": "fhgjjs",
+      "jobRole": "ghhjkk",
+      "projectName": "dfggs",
+      "salary": "345",
+      "email": "sdfg4"
+    }
+  ],
+  "projects": []
+}
