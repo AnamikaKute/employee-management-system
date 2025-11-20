@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 export default function AddEmployee() {
   const navigate = useNavigate()
+  const { id } = useParams();
   const navigateToEmployeeList = () => {
   }
   const [fullName, setFullName] = useState("")
@@ -30,33 +32,65 @@ export default function AddEmployee() {
   function handleEmailChange(event) {
     setEmail(event.target.value)
   }
+  useEffect(() => {
+  if (id) {
+    axios.get("http://localhost:4200/employees/"+ id)
+      .then((res) => {
+        setFullName(res.data.fullName);
+        setEmployeeId(res.data.employeeId);
+        setJobRole(res.data.jobRole);
+        setProjectName(res.data.projectName);
+        setSalary(res.data.salary);
+        setEmail(res.data.email);
+      })
+      .catch((err) => {
+        console.log("Error loading employee:", err);
+      });
+  }
+}, [id]);
+
   function handleSaveChange() {
     const employeeData = {
       fullName, employeeId, jobRole, projectName, salary, email
 
     }
-    axios.post("http://localhost:4200/employees", employeeData)
-      .then((response) => {
-        console.log(response.data);
+    // Updates existing student
+    if (id) {
+      axios.put("http://localhost:4200/employees/" + id,  employeeData )
+        .then(() => {
+          navigate('/employeelist')
 
-        setFullName("")
-        setEmployeeId("")
-        setJobRole("")
-        setProjectName("")
-        setSalary("")
-        setEmail("")
+        })
+        .catch((error) => {
+          console.log(error);
 
-      }).catch((error) => {
-        console.log("Error posting employee:", error);
-      });
-    navigate('/employeelist')
+        })
+    } else {
+      axios.post("http://localhost:4200/employees", employeeData)
+        .then((response) => {
+          console.log(response.data);
 
-    console.log(employeeData);
+          setFullName("")
+          setEmployeeId("")
+          setJobRole("")
+          setProjectName("")
+          setSalary("")
+          setEmail("")
+
+        }).catch((error) => {
+          console.log("Error posting employee:", error);
+        });
+      navigate('/employeelist')
+
+      console.log(employeeData);
+    }
   }
   function handleCancelChange() {
 
     navigate('/projectlist')
   }
+
+
   return (
 
     <div className=" h-screen overflow-hidden flex justify-center items-center">

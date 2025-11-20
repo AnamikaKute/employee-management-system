@@ -1,24 +1,6 @@
 {
   "employees": [
     {
-      "id": "0c6d",
-      "fullName": "",
-      "employeeId": "",
-      "jobRole": "",
-      "projectName": "",
-      "salary": "",
-      "email": ""
-    },
-    {
-      "id": "1070",
-      "fullName": "siddhesh",
-      "employeeId": "ggg",
-      "jobRole": "dfg",
-      "projectName": "dfgh",
-      "salary": "",
-      "email": "gfg"
-    },
-    {
       "id": "6737",
       "fullName": "ssdf",
       "employeeId": "ert",
@@ -28,13 +10,31 @@
       "email": "gg"
     },
     {
-      "id": "a993",
-      "fullName": "shreeyan",
-      "employeeId": "fhgjjs",
-      "jobRole": "ghhjkk",
-      "projectName": "dfggs",
-      "salary": "345",
-      "email": "sdfg4"
+      "id": "5e81",
+      "fullName": "swaru",
+      "employeeId": "3544",
+      "jobRole": "dfg",
+      "projectName": "dfsf",
+      "salary": "43",
+      "email": "ew3"
+    },
+    {
+      "fullName": "siddeshanamika",
+      "employeeId": "dferdss12",
+      "jobRole": "sdffdadf",
+      "projectName": "wdf",
+      "salary": "12",
+      "email": "dfsfd",
+      "id": "e7e1"
+    },
+    {
+      "id": "c0ee",
+      "fullName": "",
+      "employeeId": "",
+      "jobRole": "",
+      "projectName": "",
+      "salary": "",
+      "email": ""
     }
   ],
   "projects": []
